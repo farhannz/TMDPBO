@@ -39,8 +39,9 @@ public abstract class GameLoop extends JPanel {
             GameTime.setDeltaTime((float)System.nanoTime()-GameTime.getElapsed());
             GameTime.setElapsed((float)System.nanoTime());
             System.out.println(TimeUnit.SECONDS.convert(System.nanoTime(),TimeUnit.NANOSECONDS));
-            Thread t = new Thread(this::Update);
-            t.start();
+            Update();
+            //            Thread t = new Thread(this::Update);
+//            t.start();
             Render();
 //            System.out.println(System.nanoTime() + " " + GameTime.getElapsed());
         }

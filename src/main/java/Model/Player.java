@@ -15,4 +15,13 @@ public class Player extends Rectangle {
 
         this.setLocation((int)this.getX(),(int)this.getY()+speed);
     }
+
+    public void draw(Graphics g){
+        g.setColor(Color.red);
+        g.fillRect(
+                (int)this.getX(),
+                (int)this.getY(),
+                (int)this.getWidth(),
+                (int)this.getHeight());
+    }
 }

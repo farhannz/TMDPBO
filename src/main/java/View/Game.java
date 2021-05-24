@@ -46,14 +46,7 @@ public class Game extends GameLoop{
 
         g.setColor(Color.white);
         double current = GameTime.getDeltaTime();
-        g.drawString("Fps : "+Double.toString(fps/GameTime.getDeltaTime()),30,30);
-        fps = 0;
-        g.setColor(Color.red);
-        g.fillRect(
-                (int)p1.getX(),
-                (int)p1.getY(),
-                (int)p1.getWidth(),
-                (int)p1.getHeight());
+        p1.draw(g);
         g.dispose();
         bs.show();
     }

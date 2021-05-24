@@ -1,14 +1,14 @@
 View/Window.java
  View.Window
-Model/Player.java
- Model.Player
+View/GameTime.java
+ View.GameTime
 View/EventHandler/KeyInput.java
  View.EventHandler.KeyInput
  View.EventHandler.KeyInput$KeyState
-View/GameTime.java
- View.GameTime
 View/GameLoop.java
  View.GameLoop
+Model/Player.java
+ Model.Player
 Main.java
  Main
 View/Game.java
