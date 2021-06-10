@@ -7,14 +7,15 @@ import java.awt.event.KeyListener;
 import java.time.Instant;
 import java.util.concurrent.TimeUnit;
 
-public abstract class GameLoop extends JPanel {
+public abstract class GameLoop extends JPanel implements Runnable {
     private boolean running = false;
     protected int width,height;
     protected String title;
     KeyInput keyboard = new KeyInput();
     Window window = null;
     Canvas canvas = new Canvas();
-    int fps = 0;
+
+
     public GameLoop(int width, int height, String title){
         this.width = width;
         this.height = height;
@@ -23,29 +24,30 @@ public abstract class GameLoop extends JPanel {
         this.canvas.setPreferredSize(new Dimension(this.width,this.height));
         add(canvas);
         this.window.add(this);
-        setBackground(Color.black);
-//        pack();
+        setBackground(new Color(0xe763b54));
     }
 
-    public void Run(){
+    @Override
+    public void run(){
         Init();
-        this.addKeyListener(keyboard);
+        this.addKeyListener(this.keyboard);
+        canvas.addKeyListener(this.keyboard);
+        setFocusable(true);
         LoadContent();
         running = true;
-//        this.add(window);
-
+        GameTime.setElapsed(System.nanoTime());
         while(running){
-            fps++;
-            GameTime.setDeltaTime((float)System.nanoTime()-GameTime.getElapsed());
-            GameTime.setElapsed((float)System.nanoTime());
-            System.out.println(TimeUnit.SECONDS.convert(System.nanoTime(),TimeUnit.NANOSECONDS));
+            // Start polling for keyboard input
+            this.keyboard.poll();
+            // Calculating delta Time
+            GameTime.setDeltaTime(System.nanoTime() - GameTime.getElapsed());
+            GameTime.setElapsed(System.nanoTime());
             Update();
-            //            Thread t = new Thread(this::Update);
-//            t.start();
             Render();
-//            System.out.println(System.nanoTime() + " " + GameTime.getElapsed());
         }
     }
+
+    // Abstract classes yang harus diimplementasikan
     public abstract void Init();
     public abstract void LoadContent();
     public abstract void Update();

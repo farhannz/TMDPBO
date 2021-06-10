@@ -1,11 +1,10 @@
-import View.Game;
-import View.GameLoop;
-import View.Window;
+import View.*;
 
 public class Main {
     public static void main(String[] args){
-//        Window window = new Window(1280,720,"Test Game");
-        GameLoop game = new Game(1280,720,"Test Game");
-        game.Run();
+
+        // Main program memnginstansiasi menu dari gamenya
+        Menu menu = new Menu();
+        menu.setVisible(true);
     }
 }
