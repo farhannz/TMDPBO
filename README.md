@@ -10,7 +10,7 @@
 
 </div>
 
-[play](https://github.com/farhannz/TMDPBO/raw/main/playtest.gif)
+![play](https://github.com/farhannz/TMDPBO/raw/main/playtest.gif)
 <pre>
 Assets Credit:
     Sprite      : Elemental Wind Hashashin by Chierit - https://chierit.itch.io/elementals-wind-hashashin
