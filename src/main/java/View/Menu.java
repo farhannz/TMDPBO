@@ -22,10 +22,11 @@ public class Menu extends JFrame {
     private void button2ActionPerformed(ActionEvent e) {
         // TODO add your code here
         if(!textField1.getText().isEmpty()){
-            GameLoop game = new Game(1280,720,"TMD PBO Farhan C2");
+            GameLoop game = new Game(1280,720,"TMD PBO Farhan C2", textField1.getText());
             Thread t = new Thread(game::run);
             t.start();
             this.setVisible(false);
+            this.dispose();
         }
     }
 

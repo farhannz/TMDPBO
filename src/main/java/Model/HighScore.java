@@ -35,4 +35,33 @@ public class HighScore {
         }
         return result;
     }
+
+    public void Insert(int success,int fail, String username){
+        try{
+            connect();
+//            String sql = "SELECT * from highscore where Username ='"+username+"' limit 1";
+//            ResultSet res = stm.executeQuery(sql);
+//            System.out.println(res);
+            String sql = "INSERT INTO tlevel(username,success,fail) VALUES('" + username + "'," + Integer.toString(success) + "," +
+                    Integer.toString(fail) + ") ON DUPLICATE KEY UPDATE " + "success= GREATEST(success," + Integer.toString(success) +"), fail=GREATEST(fail," + Integer.toString(fail) +")";
+            System.out.println(sql);
+//
+//            while(res.next()){
+//                int hasil = res.getInt("ScoreAkhir");
+////                System.out.println(score + time);
+////                System.out.println(hasil);
+//                if(hasil < score + time){
+//                    sql = "UPDATE highscore SET scoreakhir = GREATEST(scoreakhir," + Integer.toString(score+time) +")" + ",Score =" + Integer.toString(score) + ",Waktu =" + Integer.toString(time) + " WHERE username = '" +username+"'";
+//                }
+//                else{
+//                    sql = "";
+//                }
+////                System.out.print(sql);
+//            }
+            stm.execute(sql);
+        }
+        catch(Exception e){
+            System.err.println("Gagal memasukkan data : " + e.getMessage());
+        }
+    }
 }

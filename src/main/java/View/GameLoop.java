@@ -30,6 +30,7 @@ public abstract class GameLoop extends JPanel implements Runnable {
     @Override
     public void run(){
         Init();
+        // Listener untuk menerima inputan dari keyboard
         this.addKeyListener(this.keyboard);
         canvas.addKeyListener(this.keyboard);
         setFocusable(true);
@@ -45,6 +46,17 @@ public abstract class GameLoop extends JPanel implements Runnable {
             Update();
             Render();
         }
+        close();
+    }
+
+    public void setRunning(boolean running) {
+        this.running = running;
+    }
+    public void close(){
+        this.window.dispose();
+//        new Menu();
+        Thread.interrupted();
+        new Menu().setVisible(true);
     }
 
     // Abstract classes yang harus diimplementasikan

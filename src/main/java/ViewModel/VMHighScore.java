@@ -36,4 +36,8 @@ public class VMHighScore {
         }
         return tabel;
     }
+
+    public void Insert(int success,int fail, String Username){
+        hs.Insert(success,fail,Username);
+    }
 }

@@ -1,35 +1,34 @@
+Model/Obstacle.java
+ Model.Obstacle
 ViewModel/VMObstacle.java
  ViewModel.VMObstacle
-View/GameLoop.java
- View.GameLoop
-Model/HighScore.java
- Model.HighScore
+ ViewModel.VMObstacle$Dir
+Model/Animation.java
+ Model.Animation
 View/EventHandler/KeyInput.java
  View.EventHandler.KeyInput
  View.EventHandler.KeyInput$KeyState
 Model/GameObject.java
  Model.GameObject
-ViewModel/AnimationManager.java
- ViewModel.AnimationManager
+View/Menu.java
+ View.Menu
+View/GameTime.java
+ View.GameTime
+View/Window.java
+ View.Window
+View/GameLoop.java
+ View.GameLoop
+ViewModel/VMHighScore.java
+ ViewModel.VMHighScore
+Model/HighScore.java
+ Model.HighScore
+Main.java
+ Main
+Model/Player.java
+ Model.Player
+ Model.Player$Pos
+View/Game.java
+ View.Game
 ViewModel/VMPlayer.java
  ViewModel.VMPlayer
  ViewModel.VMPlayer$State
-View/Window.java
- View.Window
-Model/Animation.java
- Model.Animation
-Main.java
- Main
-View/GameTime.java
- View.GameTime
-ViewModel/VMHighScore.java
- ViewModel.VMHighScore
-Model/Player.java
- Model.Player
-Model/Obstacle.java
- Model.Obstacle
- Model.Obstacle$Dir
-View/Game.java
- View.Game
-View/Menu.java
- View.Menu
